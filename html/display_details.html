@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        /* Styles remain unchanged */
+    </style>
+</head>
+<body>
+    <div class="details-box">
+        <h2>Customer Details</h2>
+        <div class="details" id="name"></div>
+        <div class="details" id="email"></div>
+        <!-- Display other form details similarly -->
+    </div>
+
+    <script>
+        window.onload = function() {
+            var params = new URLSearchParams(window.location.search);
+            document.getElementById("name").innerText = "Name: " + params.get('name');
+            document.getElementById("email").innerText = "Email: " + params.get('eid');
+            // Retrieve and display other form details similarly
+        };
+    </script>
+</body>
+</html>

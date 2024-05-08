@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Travel planner
+  </title>
+  <link rel='stylesheet' href="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\CSS\style.css">
+  <script>
+    var selectedImages = []; // Array to store selected image IDs
+  
+    function toggleSelection(imageId) {
+      var index = selectedImages.indexOf(imageId);
+      if (index == -1) {
+        if (selectedImages.length < 3) { // Limit selection to at most three images
+          selectedImages.push(imageId);
+          document.getElementById(imageId).classList.add('selected'); // Add selected class
+        } else {
+          alert("You can select at most three images.");
+        }
+      } else {
+        selectedImages.splice(index, 1);
+        document.getElementById(imageId).classList.remove('selected'); // Remove selected class
+      }
+      console.log("Selected Images:", selectedImages);
+    }
+  </script>
+</head>
+
+<body style="margin: 0;">
+
+  <div style="background-color: navy; overflow:hidden; height: 70px;">
+    <a href="contact.html"
+      style="float: right; display: inline; color: white; text-align: center; padding: 20px; font-weight: bolder; font-size:x-large;">Contact</a>
+    <a href="about.html"
+      style="float: right; display: inline; color: white; text-align: center; padding: 20px; font-weight: bolder; font-size:x-large;">About</a>
+    <a href="Home.html"
+      style="float: right; display:inline; color: white; text-align: left; padding: 20px; font-weight: bolder; font-size:x-large;">Home</a>
+  </div>
+  <h2 style="text-align: center; color: rgb(2, 11, 69);">Please Select three activities as per your preferences: </h2>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 20px;">
+    <div class="activities" id="image1" onclick="toggleSelection('image1')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\atv.jpg" alt="Image 1" style="width: 100%;">
+    </div>
+    <div class="activities" id="image2" onclick="toggleSelection('image2')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\bowling.jpg" alt="Image 2" style="width: 100%;">
+    </div>
+    <div class="activities" id="image3" onclick="toggleSelection('image3')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\parsail.jpg" alt="Image 3" style="width: 100%;">
+    </div>
+    <div class="activities" id="image4" onclick="toggleSelection('image4')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\cycling.jpg" alt="Image 4" style="width: 100%;">
+    </div>
+    <div class="activities" id="image5" onclick="toggleSelection('image5')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\golf.jpg" alt="Image 5" style="width: 100%;">
+    </div>
+    <div class="activities" id="image6" onclick="toggleSelection('image6')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\long drive.jpg" alt="Image 6" style="width: 100%;">
+    </div>
+    <div class="activities" id="image7" onclick="toggleSelection('image7')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\shoot.jpg" alt="Image 7" style="width: 100%;">
+    </div>
+    <div class="activities" id="image8" onclick="toggleSelection('image8')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\trek.jpg" alt="Image 8" style="width: 100%;">
+    </div>
+    <div class="activities" id="image9" onclick="toggleSelection('image9')">
+      <img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\swim.jpg" alt="Image 9" style="width: 100%;">
+    </div>
+</div>
+<center><a href = "booking_details.html"><img src="C:\Users\Jai Dayanand\Desktop\WP_PROJECT\imags\next.jpg" alt="Submit" width="140" height="100"></a></center>
+
+
+</body>
+
+</html>

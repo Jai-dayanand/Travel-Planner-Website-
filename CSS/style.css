@@ -1,0 +1,10 @@
+.activities{
+  width: 25%; 
+  margin: 10px; 
+  border: 1px solid; 
+  padding: 10px;
+}
+.activities.selected {
+  border-color: blue; /* Change border color when selected */
+  border-width: 5px;
+}

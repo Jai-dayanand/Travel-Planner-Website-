@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Customer Details</title>
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-image: linear-gradient(to bottom right, lightblue, skyblue, blue, navy);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .form-box {
+                background-color: #ffffff;
+                width: 400px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: rgb(153, 7, 7);
+            }
+
+            form {
+                text-align: left;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="datetime-local"],
+            input[type="number"] {
+                width: calc(100% - 20px);
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: rgb(153, 7, 7);
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #ad0606;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body ng-app="app">
+        <div class="form-box">
+            <h1>Booking Form</h1>
+            <form name="form1" ng-controller="cont" ng-submit="roomBooking()">
+                <h3>Personal details:</h3>
+                Name: <input type="text" name="name" required> <br><br>
+                Email ID: <input type="email" name="eid" required> <br><br>
+                Contact No: <input type="text" name="mobile" required> <br><br>
+                Check-in date and time: <input type="datetime-local" name="checkin" required> <br><br>
+                Check-out date and time: <input type="datetime-local" name="checkout" required> <br><br>
+                Number of guests: <input type="number" name="guest" ng-model="guest" required> <br><br>
+
+                <h3>Payment details:</h3>
+                Card Type: <br>
+                <input type="radio" name="payment" value="credit" required> Credit Card <br>
+                <input type="radio" name="payment" value="debit"> Debit Card <br>
+                <input type="radio" name="payment" value="netbanking"> Net Banking <br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <script>
+            var app = angular.module("app", []);
+            app.controller("cont", function ($scope) {
+                $scope.roomBooking = function () {
+                    var guestno = $scope.guest || 0;
+                    var roomno = Math.ceil(guestno / 2);
+                    var check = confirm("Number of rooms allotted = " + roomno);
+                    if (check) {
+                        // Handle success or further actions
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
